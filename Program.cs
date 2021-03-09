@@ -4,44 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace programa01
+namespace programa02
 {
     class Program
     {
         static void Main(string[] args)
         {
             /*
-             Realizar un programa que produzca los numeros aacb, bca, bcbc.
-             Donde a=2, b=4 y c=1
+            Se debe crear un programa el cual filtre por medio de la edad y de la
+            estatura a las personas que desean entrar a un parque.
             */
 
-            //Para aacb
-            double n = (117 * 10 + 7);
-            double o = (518.5 + 518.5);
-            double resultado = 0.0;
+            string datos = "";
+            int edad = 0;
+            Double estatura = 0.00;
 
-            resultado = n + o;
-            Console.WriteLine ("El resultado de la operación {0}+{1} es {2}", n, o, resultado);
+            Console.WriteLine("Hola, Bienvenido al Parque de Diversiones");
 
-            //Para bca
-            double p = 103;
-            double q = ((3 * 34)+1);
-            double r = (1564 / 4);
-            double s = 185;
-
-            resultado = (p + q + r) - s;
-            Console.WriteLine("El resultado de la operacion ({0}+{1}+{2})-{3} es {4}", p,q,r,s,resultado);
-
-            //Para bcbc
-            double t = (8452 - 6520);
-            double u = (1104.5 * 2);
-
-            resultado = (t + u);
-            Console.WriteLine("El resultado de la operacion {0}+{1} es {2}", t, u, resultado);
+            Console.WriteLine("Por favor, ingrese su edad");
             
-            Console.ReadLine();
+                 datos = Console.ReadLine();
+                 edad = Convert.ToInt32(datos);
+            
+            if (edad < 18)
+                Console.WriteLine("Su edad de {0} años, es menor al limite permitido. No puede entrar gracias por su visita", edad);
+            else if (edad >= 18)
+                Console.WriteLine("Por favor, ingrese su estatura");
+  
+                  datos = Console.ReadLine();
+                  estatura = Convert.ToDouble(datos);
+            
+            if (estatura < 1.6)
+                Console.WriteLine("Tu estatura {0} te permite ingresar a la casa encanta, el gusanito y el carrusel",  estatura);
+            else if (estatura >= 1.6)
+                Console.Write("Tu estatura {0}, te permite ingresar a la casa encantada, el gusanito, el carrusel y a la montaña rusa", estatura);
 
+                Console.ReadLine();
         }
-        
     }
 }
